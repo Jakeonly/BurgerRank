@@ -15,8 +15,8 @@ class User(Base):
     password_hash: Mapped[str] = mapped_column(String(300), nullable=False)
     is_active: Mapped[bool]
     is_admin: Mapped[bool]
-    #Relationship with Reviews: User 1:N Reviews
-    reviews: Mapped[List["Review"]] = relationship(back_populates="user")
+    #ORM
+    reviews: Mapped[List["Review"]] = relationship()
 
 
 
